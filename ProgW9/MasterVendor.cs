@@ -64,6 +64,8 @@ namespace ProgW9
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'payablesDataSet.Invoices' table. You can move, or remove it, as needed.
+            this.invoicesTableAdapter.Fill(this.payablesDataSet.Invoices);
             Binding b = phoneTextBox.DataBindings["Text"];
             b.Format += LibraryInvoice.formatPhoneNumber;
             b.Parse += LibraryInvoice.unFormatPhoneNumber;
@@ -204,6 +206,14 @@ namespace ProgW9
         private void vendorsBindingNavigator_RefreshItems(object sender, EventArgs e)
         {
 
+        }
+
+        private void invoicesDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 8)
+            {
+
+            }
         }
     }
 }

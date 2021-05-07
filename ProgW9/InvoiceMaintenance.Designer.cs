@@ -1,7 +1,7 @@
 ﻿
 namespace ProgW9
 {
-    partial class MasterVendor
+    partial class InvoiceMaintenance
     {
         /// <summary>
         /// Required designer variable.
@@ -33,14 +33,16 @@ namespace ProgW9
             System.Windows.Forms.Label vendorIDLabel;
             System.Windows.Forms.Label nameLabel;
             System.Windows.Forms.Label address1Label;
+            System.Windows.Forms.Label address2Label;
             System.Windows.Forms.Label cityLabel;
             System.Windows.Forms.Label stateLabel;
             System.Windows.Forms.Label zipCodeLabel;
+            System.Windows.Forms.Label phoneLabel;
+            System.Windows.Forms.Label contactLNameLabel;
+            System.Windows.Forms.Label contactFNameLabel;
             System.Windows.Forms.Label defaultTermsIDLabel;
             System.Windows.Forms.Label defaultAccountNoLabel;
-            System.Windows.Forms.Label phoneLabel1;
-            System.Windows.Forms.Label stateLabel1;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MasterVendor));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InvoiceMaintenance));
             this.payablesDataSet = new ProgW9.PayablesDataSet();
             this.vendorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vendorsTableAdapter = new ProgW9.PayablesDataSetTableAdapters.VendorsTableAdapter();
@@ -48,6 +50,7 @@ namespace ProgW9
             this.vendorsBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -56,72 +59,74 @@ namespace ProgW9
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.vendorsBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.vendorIDTextBox = new System.Windows.Forms.TextBox();
-            this.nameTextBox = new System.Windows.Forms.TextBox();
-            this.address1TextBox = new System.Windows.Forms.TextBox();
-            this.address2TextBox = new System.Windows.Forms.TextBox();
-            this.cityTextBox = new System.Windows.Forms.TextBox();
+            this.vendorIDSpinEdit = new DevExpress.XtraEditors.SpinEdit();
+            this.nameTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.address1TextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.address2TextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.cityTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.stateComboBox = new System.Windows.Forms.ComboBox();
-            this.statesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.zipCodeTextBox = new System.Windows.Forms.TextBox();
-            this.statesTableAdapter = new ProgW9.PayablesDataSetTableAdapters.StatesTableAdapter();
-            this.defaultTermsIDComboBox = new System.Windows.Forms.ComboBox();
-            this.termsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.termsTableAdapter = new ProgW9.PayablesDataSetTableAdapters.TermsTableAdapter();
-            this.defaultAccountNoComboBox = new System.Windows.Forms.ComboBox();
-            this.gLAccountsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gLAccountsTableAdapter = new ProgW9.PayablesDataSetTableAdapters.GLAccountsTableAdapter();
+            this.zipCodeTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.phoneTextBox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.stateComboBox1 = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.fillByVendorIDToolStrip = new System.Windows.Forms.ToolStrip();
-            this.vendorIDToolStripLabel = new System.Windows.Forms.ToolStripLabel();
-            this.vendorIDToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
-            this.fillByVendorIDToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.contactLNameTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.contactFNameTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.defaultTermsIDComboBox = new System.Windows.Forms.ComboBox();
+            this.defaultAccountNoComboBox = new System.Windows.Forms.ComboBox();
             this.invoicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.invoicesTableAdapter = new ProgW9.PayablesDataSetTableAdapters.InvoicesTableAdapter();
             this.invoicesDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.invoiceLineItemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.invoiceLineItemsTableAdapter = new ProgW9.PayablesDataSetTableAdapters.InvoiceLineItemsTableAdapter();
+            this.invoiceLineItemsDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             vendorIDLabel = new System.Windows.Forms.Label();
             nameLabel = new System.Windows.Forms.Label();
             address1Label = new System.Windows.Forms.Label();
+            address2Label = new System.Windows.Forms.Label();
             cityLabel = new System.Windows.Forms.Label();
             stateLabel = new System.Windows.Forms.Label();
             zipCodeLabel = new System.Windows.Forms.Label();
+            phoneLabel = new System.Windows.Forms.Label();
+            contactLNameLabel = new System.Windows.Forms.Label();
+            contactFNameLabel = new System.Windows.Forms.Label();
             defaultTermsIDLabel = new System.Windows.Forms.Label();
             defaultAccountNoLabel = new System.Windows.Forms.Label();
-            phoneLabel1 = new System.Windows.Forms.Label();
-            stateLabel1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.payablesDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vendorsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vendorsBindingNavigator)).BeginInit();
             this.vendorsBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.statesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.termsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gLAccountsBindingSource)).BeginInit();
-            this.fillByVendorIDToolStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.vendorIDSpinEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nameTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.address1TextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.address2TextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cityTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zipCodeTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contactLNameTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contactFNameTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.invoicesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.invoicesDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invoiceLineItemsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invoiceLineItemsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // vendorIDLabel
             // 
             vendorIDLabel.AutoSize = true;
-            vendorIDLabel.Location = new System.Drawing.Point(12, 65);
+            vendorIDLabel.Location = new System.Drawing.Point(174, 58);
             vendorIDLabel.Name = "vendorIDLabel";
             vendorIDLabel.Size = new System.Drawing.Size(58, 13);
             vendorIDLabel.TabIndex = 1;
@@ -130,7 +135,7 @@ namespace ProgW9
             // nameLabel
             // 
             nameLabel.AutoSize = true;
-            nameLabel.Location = new System.Drawing.Point(12, 91);
+            nameLabel.Location = new System.Drawing.Point(174, 84);
             nameLabel.Name = "nameLabel";
             nameLabel.Size = new System.Drawing.Size(38, 13);
             nameLabel.TabIndex = 3;
@@ -139,16 +144,25 @@ namespace ProgW9
             // address1Label
             // 
             address1Label.AutoSize = true;
-            address1Label.Location = new System.Drawing.Point(12, 117);
+            address1Label.Location = new System.Drawing.Point(174, 110);
             address1Label.Name = "address1Label";
             address1Label.Size = new System.Drawing.Size(54, 13);
             address1Label.TabIndex = 5;
             address1Label.Text = "Address1:";
             // 
+            // address2Label
+            // 
+            address2Label.AutoSize = true;
+            address2Label.Location = new System.Drawing.Point(174, 136);
+            address2Label.Name = "address2Label";
+            address2Label.Size = new System.Drawing.Size(54, 13);
+            address2Label.TabIndex = 7;
+            address2Label.Text = "Address2:";
+            // 
             // cityLabel
             // 
             cityLabel.AutoSize = true;
-            cityLabel.Location = new System.Drawing.Point(12, 169);
+            cityLabel.Location = new System.Drawing.Point(174, 162);
             cityLabel.Name = "cityLabel";
             cityLabel.Size = new System.Drawing.Size(27, 13);
             cityLabel.TabIndex = 9;
@@ -157,7 +171,7 @@ namespace ProgW9
             // stateLabel
             // 
             stateLabel.AutoSize = true;
-            stateLabel.Location = new System.Drawing.Point(12, 195);
+            stateLabel.Location = new System.Drawing.Point(174, 191);
             stateLabel.Name = "stateLabel";
             stateLabel.Size = new System.Drawing.Size(35, 13);
             stateLabel.TabIndex = 11;
@@ -166,47 +180,56 @@ namespace ProgW9
             // zipCodeLabel
             // 
             zipCodeLabel.AutoSize = true;
-            zipCodeLabel.Location = new System.Drawing.Point(222, 195);
+            zipCodeLabel.Location = new System.Drawing.Point(465, 55);
             zipCodeLabel.Name = "zipCodeLabel";
             zipCodeLabel.Size = new System.Drawing.Size(53, 13);
             zipCodeLabel.TabIndex = 13;
             zipCodeLabel.Text = "Zip Code:";
             // 
+            // phoneLabel
+            // 
+            phoneLabel.AutoSize = true;
+            phoneLabel.Location = new System.Drawing.Point(465, 84);
+            phoneLabel.Name = "phoneLabel";
+            phoneLabel.Size = new System.Drawing.Size(41, 13);
+            phoneLabel.TabIndex = 15;
+            phoneLabel.Text = "Phone:";
+            // 
+            // contactLNameLabel
+            // 
+            contactLNameLabel.AutoSize = true;
+            contactLNameLabel.Location = new System.Drawing.Point(465, 107);
+            contactLNameLabel.Name = "contactLNameLabel";
+            contactLNameLabel.Size = new System.Drawing.Size(84, 13);
+            contactLNameLabel.TabIndex = 17;
+            contactLNameLabel.Text = "Contact LName:";
+            // 
+            // contactFNameLabel
+            // 
+            contactFNameLabel.AutoSize = true;
+            contactFNameLabel.Location = new System.Drawing.Point(465, 133);
+            contactFNameLabel.Name = "contactFNameLabel";
+            contactFNameLabel.Size = new System.Drawing.Size(84, 13);
+            contactFNameLabel.TabIndex = 19;
+            contactFNameLabel.Text = "Contact FName:";
+            // 
             // defaultTermsIDLabel
             // 
             defaultTermsIDLabel.AutoSize = true;
-            defaultTermsIDLabel.Location = new System.Drawing.Point(12, 224);
+            defaultTermsIDLabel.Location = new System.Drawing.Point(465, 162);
             defaultTermsIDLabel.Name = "defaultTermsIDLabel";
             defaultTermsIDLabel.Size = new System.Drawing.Size(90, 13);
-            defaultTermsIDLabel.TabIndex = 14;
+            defaultTermsIDLabel.TabIndex = 21;
             defaultTermsIDLabel.Text = "Default Terms ID:";
             // 
             // defaultAccountNoLabel
             // 
             defaultAccountNoLabel.AutoSize = true;
-            defaultAccountNoLabel.Location = new System.Drawing.Point(12, 251);
+            defaultAccountNoLabel.Location = new System.Drawing.Point(465, 189);
             defaultAccountNoLabel.Name = "defaultAccountNoLabel";
             defaultAccountNoLabel.Size = new System.Drawing.Size(104, 13);
-            defaultAccountNoLabel.TabIndex = 16;
+            defaultAccountNoLabel.TabIndex = 23;
             defaultAccountNoLabel.Text = "Default Account No:";
-            // 
-            // phoneLabel1
-            // 
-            phoneLabel1.AutoSize = true;
-            phoneLabel1.Location = new System.Drawing.Point(12, 278);
-            phoneLabel1.Name = "phoneLabel1";
-            phoneLabel1.Size = new System.Drawing.Size(41, 13);
-            phoneLabel1.TabIndex = 19;
-            phoneLabel1.Text = "Phone:";
-            // 
-            // stateLabel1
-            // 
-            stateLabel1.AutoSize = true;
-            stateLabel1.Location = new System.Drawing.Point(399, 79);
-            stateLabel1.Name = "stateLabel1";
-            stateLabel1.Size = new System.Drawing.Size(35, 13);
-            stateLabel1.TabIndex = 21;
-            stateLabel1.Text = "State:";
             // 
             // payablesDataSet
             // 
@@ -227,7 +250,6 @@ namespace ProgW9
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.GLAccountsTableAdapter = null;
             this.tableAdapterManager.InvoiceLineItemsTableAdapter = null;
-            this.tableAdapterManager.InvoicesTableAdapter = null;
             this.tableAdapterManager.StatesTableAdapter = null;
             this.tableAdapterManager.TermsTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = ProgW9.PayablesDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
@@ -238,7 +260,7 @@ namespace ProgW9
             this.vendorsBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
             this.vendorsBindingNavigator.BindingSource = this.vendorsBindingSource;
             this.vendorsBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.vendorsBindingNavigator.DeleteItem = null;
+            this.vendorsBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
             this.vendorsBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -251,8 +273,7 @@ namespace ProgW9
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
-            this.vendorsBindingNavigatorSaveItem,
-            this.toolStripButton2});
+            this.vendorsBindingNavigatorSaveItem});
             this.vendorsBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.vendorsBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.vendorsBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -260,10 +281,9 @@ namespace ProgW9
             this.vendorsBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.vendorsBindingNavigator.Name = "vendorsBindingNavigator";
             this.vendorsBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.vendorsBindingNavigator.Size = new System.Drawing.Size(863, 25);
+            this.vendorsBindingNavigator.Size = new System.Drawing.Size(965, 25);
             this.vendorsBindingNavigator.TabIndex = 0;
             this.vendorsBindingNavigator.Text = "bindingNavigator1";
-            this.vendorsBindingNavigator.RefreshItems += new System.EventHandler(this.vendorsBindingNavigator_RefreshItems);
             // 
             // bindingNavigatorAddNewItem
             // 
@@ -273,7 +293,6 @@ namespace ProgW9
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Add new";
-            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
             // bindingNavigatorCountItem
             // 
@@ -281,6 +300,15 @@ namespace ProgW9
             this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -309,6 +337,7 @@ namespace ProgW9
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -342,16 +371,6 @@ namespace ProgW9
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
-            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
-            // 
             // vendorsBindingNavigatorSaveItem
             // 
             this.vendorsBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -359,229 +378,113 @@ namespace ProgW9
             this.vendorsBindingNavigatorSaveItem.Name = "vendorsBindingNavigatorSaveItem";
             this.vendorsBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.vendorsBindingNavigatorSaveItem.Text = "Save Data";
-            this.vendorsBindingNavigatorSaveItem.Click += new System.EventHandler(this.vendorsBindingNavigatorSaveItem_Click);
+            this.vendorsBindingNavigatorSaveItem.Click += new System.EventHandler(this.vendorsBindingNavigatorSaveItem_Click_1);
             // 
-            // toolStripButton2
+            // vendorIDSpinEdit
             // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(47, 22);
-            this.toolStripButton2.Text = "Cancel";
-            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            this.vendorIDSpinEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.vendorsBindingSource, "VendorID", true));
+            this.vendorIDSpinEdit.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.vendorIDSpinEdit.Location = new System.Drawing.Point(284, 55);
+            this.vendorIDSpinEdit.Name = "vendorIDSpinEdit";
+            this.vendorIDSpinEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.vendorIDSpinEdit.Size = new System.Drawing.Size(121, 20);
+            this.vendorIDSpinEdit.TabIndex = 2;
             // 
-            // vendorIDTextBox
+            // nameTextEdit
             // 
-            this.vendorIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vendorsBindingSource, "VendorID", true));
-            this.vendorIDTextBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.vendorIDTextBox.Location = new System.Drawing.Point(122, 62);
-            this.vendorIDTextBox.Name = "vendorIDTextBox";
-            this.vendorIDTextBox.Size = new System.Drawing.Size(227, 20);
-            this.vendorIDTextBox.TabIndex = 2;
+            this.nameTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.vendorsBindingSource, "Name", true));
+            this.nameTextEdit.Location = new System.Drawing.Point(284, 81);
+            this.nameTextEdit.Name = "nameTextEdit";
+            this.nameTextEdit.Size = new System.Drawing.Size(121, 20);
+            this.nameTextEdit.TabIndex = 4;
             // 
-            // nameTextBox
+            // address1TextEdit
             // 
-            this.nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vendorsBindingSource, "Name", true));
-            this.nameTextBox.Location = new System.Drawing.Point(122, 88);
-            this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(227, 20);
-            this.nameTextBox.TabIndex = 4;
-            this.nameTextBox.TextChanged += new System.EventHandler(this.nameTextBox_TextChanged);
+            this.address1TextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.vendorsBindingSource, "Address1", true));
+            this.address1TextEdit.Location = new System.Drawing.Point(284, 107);
+            this.address1TextEdit.Name = "address1TextEdit";
+            this.address1TextEdit.Size = new System.Drawing.Size(121, 20);
+            this.address1TextEdit.TabIndex = 6;
             // 
-            // address1TextBox
+            // address2TextEdit
             // 
-            this.address1TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vendorsBindingSource, "Address1", true));
-            this.address1TextBox.Location = new System.Drawing.Point(122, 114);
-            this.address1TextBox.Name = "address1TextBox";
-            this.address1TextBox.Size = new System.Drawing.Size(227, 20);
-            this.address1TextBox.TabIndex = 6;
+            this.address2TextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.vendorsBindingSource, "Address2", true));
+            this.address2TextEdit.Location = new System.Drawing.Point(284, 133);
+            this.address2TextEdit.Name = "address2TextEdit";
+            this.address2TextEdit.Size = new System.Drawing.Size(121, 20);
+            this.address2TextEdit.TabIndex = 8;
             // 
-            // address2TextBox
+            // cityTextEdit
             // 
-            this.address2TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vendorsBindingSource, "Address2", true));
-            this.address2TextBox.Location = new System.Drawing.Point(122, 140);
-            this.address2TextBox.Name = "address2TextBox";
-            this.address2TextBox.Size = new System.Drawing.Size(227, 20);
-            this.address2TextBox.TabIndex = 8;
-            // 
-            // cityTextBox
-            // 
-            this.cityTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vendorsBindingSource, "City", true));
-            this.cityTextBox.Location = new System.Drawing.Point(122, 166);
-            this.cityTextBox.Name = "cityTextBox";
-            this.cityTextBox.Size = new System.Drawing.Size(227, 20);
-            this.cityTextBox.TabIndex = 10;
+            this.cityTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.vendorsBindingSource, "City", true));
+            this.cityTextEdit.Location = new System.Drawing.Point(284, 159);
+            this.cityTextEdit.Name = "cityTextEdit";
+            this.cityTextEdit.Size = new System.Drawing.Size(121, 20);
+            this.cityTextEdit.TabIndex = 10;
             // 
             // stateComboBox
             // 
-            this.stateComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.vendorsBindingSource, "State", true));
-            this.stateComboBox.DataSource = this.statesBindingSource;
-            this.stateComboBox.DisplayMember = "StateName";
-            this.stateComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.stateComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vendorsBindingSource, "State", true));
             this.stateComboBox.FormattingEnabled = true;
-            this.stateComboBox.Location = new System.Drawing.Point(122, 192);
+            this.stateComboBox.Location = new System.Drawing.Point(284, 188);
             this.stateComboBox.Name = "stateComboBox";
-            this.stateComboBox.Size = new System.Drawing.Size(82, 21);
+            this.stateComboBox.Size = new System.Drawing.Size(121, 21);
             this.stateComboBox.TabIndex = 12;
-            this.stateComboBox.ValueMember = "StateCode";
             // 
-            // statesBindingSource
+            // zipCodeTextEdit
             // 
-            this.statesBindingSource.DataMember = "States";
-            this.statesBindingSource.DataSource = this.payablesDataSet;
-            // 
-            // zipCodeTextBox
-            // 
-            this.zipCodeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vendorsBindingSource, "ZipCode", true));
-            this.zipCodeTextBox.Location = new System.Drawing.Point(281, 192);
-            this.zipCodeTextBox.Name = "zipCodeTextBox";
-            this.zipCodeTextBox.Size = new System.Drawing.Size(68, 20);
-            this.zipCodeTextBox.TabIndex = 14;
-            // 
-            // statesTableAdapter
-            // 
-            this.statesTableAdapter.ClearBeforeFill = true;
-            // 
-            // defaultTermsIDComboBox
-            // 
-            this.defaultTermsIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.vendorsBindingSource, "DefaultTermsID", true));
-            this.defaultTermsIDComboBox.DataSource = this.termsBindingSource;
-            this.defaultTermsIDComboBox.DisplayMember = "Description";
-            this.defaultTermsIDComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.defaultTermsIDComboBox.FormattingEnabled = true;
-            this.defaultTermsIDComboBox.Location = new System.Drawing.Point(122, 221);
-            this.defaultTermsIDComboBox.Name = "defaultTermsIDComboBox";
-            this.defaultTermsIDComboBox.Size = new System.Drawing.Size(121, 21);
-            this.defaultTermsIDComboBox.TabIndex = 15;
-            this.defaultTermsIDComboBox.ValueMember = "TermsID";
-            // 
-            // termsBindingSource
-            // 
-            this.termsBindingSource.DataMember = "Terms";
-            this.termsBindingSource.DataSource = this.payablesDataSet;
-            // 
-            // termsTableAdapter
-            // 
-            this.termsTableAdapter.ClearBeforeFill = true;
-            // 
-            // defaultAccountNoComboBox
-            // 
-            this.defaultAccountNoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.vendorsBindingSource, "DefaultAccountNo", true));
-            this.defaultAccountNoComboBox.DataSource = this.gLAccountsBindingSource;
-            this.defaultAccountNoComboBox.DisplayMember = "Description";
-            this.defaultAccountNoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.defaultAccountNoComboBox.FormattingEnabled = true;
-            this.defaultAccountNoComboBox.Location = new System.Drawing.Point(122, 248);
-            this.defaultAccountNoComboBox.Name = "defaultAccountNoComboBox";
-            this.defaultAccountNoComboBox.Size = new System.Drawing.Size(121, 21);
-            this.defaultAccountNoComboBox.TabIndex = 17;
-            this.defaultAccountNoComboBox.ValueMember = "AccountNo";
-            // 
-            // gLAccountsBindingSource
-            // 
-            this.gLAccountsBindingSource.DataMember = "GLAccounts";
-            this.gLAccountsBindingSource.DataSource = this.payablesDataSet;
-            // 
-            // gLAccountsTableAdapter
-            // 
-            this.gLAccountsTableAdapter.ClearBeforeFill = true;
+            this.zipCodeTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.vendorsBindingSource, "ZipCode", true));
+            this.zipCodeTextEdit.Location = new System.Drawing.Point(575, 52);
+            this.zipCodeTextEdit.Name = "zipCodeTextEdit";
+            this.zipCodeTextEdit.Size = new System.Drawing.Size(121, 20);
+            this.zipCodeTextEdit.TabIndex = 14;
             // 
             // phoneTextBox
             // 
             this.phoneTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vendorsBindingSource, "Phone", true));
-            this.phoneTextBox.Location = new System.Drawing.Point(122, 278);
+            this.phoneTextBox.Location = new System.Drawing.Point(575, 81);
             this.phoneTextBox.Name = "phoneTextBox";
-            this.phoneTextBox.Size = new System.Drawing.Size(227, 20);
-            this.phoneTextBox.TabIndex = 20;
+            this.phoneTextBox.Size = new System.Drawing.Size(121, 20);
+            this.phoneTextBox.TabIndex = 16;
             // 
-            // button1
+            // contactLNameTextEdit
             // 
-            this.button1.Location = new System.Drawing.Point(647, 140);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.contactLNameTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.vendorsBindingSource, "ContactLName", true));
+            this.contactLNameTextEdit.Location = new System.Drawing.Point(575, 104);
+            this.contactLNameTextEdit.Name = "contactLNameTextEdit";
+            this.contactLNameTextEdit.Size = new System.Drawing.Size(121, 20);
+            this.contactLNameTextEdit.TabIndex = 18;
             // 
-            // stateComboBox1
+            // contactFNameTextEdit
             // 
-            this.stateComboBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.vendorsBindingSource, "State", true));
-            this.stateComboBox1.DataSource = this.statesBindingSource;
-            this.stateComboBox1.DisplayMember = "StateName";
-            this.stateComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.stateComboBox1.FormattingEnabled = true;
-            this.stateComboBox1.Location = new System.Drawing.Point(440, 76);
-            this.stateComboBox1.Name = "stateComboBox1";
-            this.stateComboBox1.Size = new System.Drawing.Size(121, 21);
-            this.stateComboBox1.TabIndex = 22;
-            this.stateComboBox1.ValueMember = "StateCode";
+            this.contactFNameTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.vendorsBindingSource, "ContactFName", true));
+            this.contactFNameTextEdit.Location = new System.Drawing.Point(575, 130);
+            this.contactFNameTextEdit.Name = "contactFNameTextEdit";
+            this.contactFNameTextEdit.Size = new System.Drawing.Size(121, 20);
+            this.contactFNameTextEdit.TabIndex = 20;
             // 
-            // button2
+            // defaultTermsIDComboBox
             // 
-            this.button2.Location = new System.Drawing.Point(495, 190);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 23;
-            this.button2.Text = "Next";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.defaultTermsIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vendorsBindingSource, "DefaultTermsID", true));
+            this.defaultTermsIDComboBox.FormattingEnabled = true;
+            this.defaultTermsIDComboBox.Location = new System.Drawing.Point(575, 159);
+            this.defaultTermsIDComboBox.Name = "defaultTermsIDComboBox";
+            this.defaultTermsIDComboBox.Size = new System.Drawing.Size(121, 21);
+            this.defaultTermsIDComboBox.TabIndex = 22;
             // 
-            // fillByVendorIDToolStrip
+            // defaultAccountNoComboBox
             // 
-            this.fillByVendorIDToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.vendorIDToolStripLabel,
-            this.vendorIDToolStripTextBox,
-            this.fillByVendorIDToolStripButton,
-            this.toolStripSeparator1,
-            this.toolStripButton1});
-            this.fillByVendorIDToolStrip.Location = new System.Drawing.Point(0, 25);
-            this.fillByVendorIDToolStrip.Name = "fillByVendorIDToolStrip";
-            this.fillByVendorIDToolStrip.Size = new System.Drawing.Size(863, 25);
-            this.fillByVendorIDToolStrip.TabIndex = 24;
-            this.fillByVendorIDToolStrip.Text = "fillByVendorIDToolStrip";
-            // 
-            // vendorIDToolStripLabel
-            // 
-            this.vendorIDToolStripLabel.Name = "vendorIDToolStripLabel";
-            this.vendorIDToolStripLabel.Size = new System.Drawing.Size(58, 22);
-            this.vendorIDToolStripLabel.Text = "vendorID:";
-            // 
-            // vendorIDToolStripTextBox
-            // 
-            this.vendorIDToolStripTextBox.Name = "vendorIDToolStripTextBox";
-            this.vendorIDToolStripTextBox.Size = new System.Drawing.Size(100, 25);
-            // 
-            // fillByVendorIDToolStripButton
-            // 
-            this.fillByVendorIDToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.fillByVendorIDToolStripButton.Name = "fillByVendorIDToolStripButton";
-            this.fillByVendorIDToolStripButton.Size = new System.Drawing.Size(87, 22);
-            this.fillByVendorIDToolStripButton.Text = "FillByVendorID";
-            this.fillByVendorIDToolStripButton.Click += new System.EventHandler(this.fillByVendorIDToolStripButton_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(68, 22);
-            this.toolStripButton1.Text = "Reset Filter";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 573);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(863, 22);
-            this.statusStrip1.TabIndex = 25;
-            this.statusStrip1.Text = "statusStrip1";
+            this.defaultAccountNoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vendorsBindingSource, "DefaultAccountNo", true));
+            this.defaultAccountNoComboBox.FormattingEnabled = true;
+            this.defaultAccountNoComboBox.Location = new System.Drawing.Point(575, 186);
+            this.defaultAccountNoComboBox.Name = "defaultAccountNoComboBox";
+            this.defaultAccountNoComboBox.Size = new System.Drawing.Size(121, 21);
+            this.defaultAccountNoComboBox.TabIndex = 24;
             // 
             // invoicesBindingSource
             // 
@@ -594,28 +497,24 @@ namespace ProgW9
             // 
             // invoicesDataGridView
             // 
-            this.invoicesDataGridView.AllowUserToAddRows = false;
-            this.invoicesDataGridView.AllowUserToDeleteRows = false;
-            this.invoicesDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.invoicesDataGridView.AutoGenerateColumns = false;
             this.invoicesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.invoicesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
             this.dataGridViewTextBoxColumn9,
             this.dataGridViewTextBoxColumn10});
             this.invoicesDataGridView.DataSource = this.invoicesBindingSource;
-            this.invoicesDataGridView.Location = new System.Drawing.Point(15, 304);
+            this.invoicesDataGridView.Location = new System.Drawing.Point(29, 236);
             this.invoicesDataGridView.Name = "invoicesDataGridView";
-            this.invoicesDataGridView.Size = new System.Drawing.Size(836, 253);
-            this.invoicesDataGridView.TabIndex = 26;
-            this.invoicesDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.invoicesDataGridView_CellContentClick);
+            this.invoicesDataGridView.Size = new System.Drawing.Size(889, 249);
+            this.invoicesDataGridView.TabIndex = 25;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -623,7 +522,12 @@ namespace ProgW9
             this.dataGridViewTextBoxColumn1.HeaderText = "InvoiceID";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "VendorID";
+            this.dataGridViewTextBoxColumn2.HeaderText = "VendorID";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -655,6 +559,12 @@ namespace ProgW9
             this.dataGridViewTextBoxColumn7.HeaderText = "CreditTotal";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "TermsID";
+            this.dataGridViewTextBoxColumn8.HeaderText = "TermsID";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.DataPropertyName = "DueDate";
@@ -667,53 +577,113 @@ namespace ProgW9
             this.dataGridViewTextBoxColumn10.HeaderText = "PaymentDate";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             // 
-            // MasterVendor
+            // invoiceLineItemsBindingSource
+            // 
+            this.invoiceLineItemsBindingSource.DataMember = "FK_InvoiceLineItems_Invoices";
+            this.invoiceLineItemsBindingSource.DataSource = this.invoicesBindingSource;
+            // 
+            // invoiceLineItemsTableAdapter
+            // 
+            this.invoiceLineItemsTableAdapter.ClearBeforeFill = true;
+            // 
+            // invoiceLineItemsDataGridView
+            // 
+            this.invoiceLineItemsDataGridView.AutoGenerateColumns = false;
+            this.invoiceLineItemsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.invoiceLineItemsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12,
+            this.dataGridViewTextBoxColumn13,
+            this.dataGridViewTextBoxColumn14,
+            this.dataGridViewTextBoxColumn15});
+            this.invoiceLineItemsDataGridView.DataSource = this.invoiceLineItemsBindingSource;
+            this.invoiceLineItemsDataGridView.Location = new System.Drawing.Point(29, 526);
+            this.invoiceLineItemsDataGridView.Name = "invoiceLineItemsDataGridView";
+            this.invoiceLineItemsDataGridView.Size = new System.Drawing.Size(565, 218);
+            this.invoiceLineItemsDataGridView.TabIndex = 26;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "InvoiceID";
+            this.dataGridViewTextBoxColumn11.HeaderText = "InvoiceID";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "InvoiceSequence";
+            this.dataGridViewTextBoxColumn12.HeaderText = "InvoiceSequence";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "AccountNo";
+            this.dataGridViewTextBoxColumn13.HeaderText = "AccountNo";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "Amount";
+            this.dataGridViewTextBoxColumn14.HeaderText = "Amount";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.DataPropertyName = "Description";
+            this.dataGridViewTextBoxColumn15.HeaderText = "Description";
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            // 
+            // InvoiceMaintenance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(863, 595);
+            this.ClientSize = new System.Drawing.Size(965, 793);
+            this.Controls.Add(this.invoiceLineItemsDataGridView);
             this.Controls.Add(this.invoicesDataGridView);
-            this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.fillByVendorIDToolStrip);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(stateLabel1);
-            this.Controls.Add(this.stateComboBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(phoneLabel1);
-            this.Controls.Add(this.phoneTextBox);
-            this.Controls.Add(defaultAccountNoLabel);
-            this.Controls.Add(this.defaultAccountNoComboBox);
-            this.Controls.Add(defaultTermsIDLabel);
-            this.Controls.Add(this.defaultTermsIDComboBox);
             this.Controls.Add(vendorIDLabel);
-            this.Controls.Add(this.vendorIDTextBox);
+            this.Controls.Add(this.vendorIDSpinEdit);
             this.Controls.Add(nameLabel);
-            this.Controls.Add(this.nameTextBox);
+            this.Controls.Add(this.nameTextEdit);
             this.Controls.Add(address1Label);
-            this.Controls.Add(this.address1TextBox);
-            this.Controls.Add(this.address2TextBox);
+            this.Controls.Add(this.address1TextEdit);
+            this.Controls.Add(address2Label);
+            this.Controls.Add(this.address2TextEdit);
             this.Controls.Add(cityLabel);
-            this.Controls.Add(this.cityTextBox);
+            this.Controls.Add(this.cityTextEdit);
             this.Controls.Add(stateLabel);
             this.Controls.Add(this.stateComboBox);
             this.Controls.Add(zipCodeLabel);
-            this.Controls.Add(this.zipCodeTextBox);
+            this.Controls.Add(this.zipCodeTextEdit);
+            this.Controls.Add(phoneLabel);
+            this.Controls.Add(this.phoneTextBox);
+            this.Controls.Add(contactLNameLabel);
+            this.Controls.Add(this.contactLNameTextEdit);
+            this.Controls.Add(contactFNameLabel);
+            this.Controls.Add(this.contactFNameTextEdit);
+            this.Controls.Add(defaultTermsIDLabel);
+            this.Controls.Add(this.defaultTermsIDComboBox);
+            this.Controls.Add(defaultAccountNoLabel);
+            this.Controls.Add(this.defaultAccountNoComboBox);
             this.Controls.Add(this.vendorsBindingNavigator);
-            this.Name = "MasterVendor";
-            this.Text = "`";
-            this.Load += new System.EventHandler(this.Form2_Load);
+            this.Name = "InvoiceMaintenance";
+            this.Text = "InvoiceMaintenance";
+            this.Load += new System.EventHandler(this.InvoiceMaintenance_Load);
             ((System.ComponentModel.ISupportInitialize)(this.payablesDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vendorsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vendorsBindingNavigator)).EndInit();
             this.vendorsBindingNavigator.ResumeLayout(false);
             this.vendorsBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.statesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.termsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gLAccountsBindingSource)).EndInit();
-            this.fillByVendorIDToolStrip.ResumeLayout(false);
-            this.fillByVendorIDToolStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.vendorIDSpinEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nameTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.address1TextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.address2TextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cityTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zipCodeTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contactLNameTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contactFNameTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.invoicesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.invoicesDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invoiceLineItemsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invoiceLineItemsDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -738,43 +708,38 @@ namespace ProgW9
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton vendorsBindingNavigatorSaveItem;
-        private System.Windows.Forms.TextBox vendorIDTextBox;
-        private System.Windows.Forms.TextBox nameTextBox;
-        private System.Windows.Forms.TextBox address1TextBox;
-        private System.Windows.Forms.TextBox address2TextBox;
-        private System.Windows.Forms.TextBox cityTextBox;
+        private DevExpress.XtraEditors.SpinEdit vendorIDSpinEdit;
+        private DevExpress.XtraEditors.TextEdit nameTextEdit;
+        private DevExpress.XtraEditors.TextEdit address1TextEdit;
+        private DevExpress.XtraEditors.TextEdit address2TextEdit;
+        private DevExpress.XtraEditors.TextEdit cityTextEdit;
         private System.Windows.Forms.ComboBox stateComboBox;
-        private System.Windows.Forms.TextBox zipCodeTextBox;
-        private System.Windows.Forms.BindingSource statesBindingSource;
-        private PayablesDataSetTableAdapters.StatesTableAdapter statesTableAdapter;
-        private System.Windows.Forms.ComboBox defaultTermsIDComboBox;
-        private System.Windows.Forms.BindingSource termsBindingSource;
-        private PayablesDataSetTableAdapters.TermsTableAdapter termsTableAdapter;
-        private System.Windows.Forms.ComboBox defaultAccountNoComboBox;
-        private System.Windows.Forms.BindingSource gLAccountsBindingSource;
-        private PayablesDataSetTableAdapters.GLAccountsTableAdapter gLAccountsTableAdapter;
+        private DevExpress.XtraEditors.TextEdit zipCodeTextEdit;
         private System.Windows.Forms.TextBox phoneTextBox;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox stateComboBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ToolStrip fillByVendorIDToolStrip;
-        private System.Windows.Forms.ToolStripLabel vendorIDToolStripLabel;
-        private System.Windows.Forms.ToolStripTextBox vendorIDToolStripTextBox;
-        private System.Windows.Forms.ToolStripButton fillByVendorIDToolStripButton;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private DevExpress.XtraEditors.TextEdit contactLNameTextEdit;
+        private DevExpress.XtraEditors.TextEdit contactFNameTextEdit;
+        private System.Windows.Forms.ComboBox defaultTermsIDComboBox;
+        private System.Windows.Forms.ComboBox defaultAccountNoComboBox;
         private System.Windows.Forms.BindingSource invoicesBindingSource;
         private PayablesDataSetTableAdapters.InvoicesTableAdapter invoicesTableAdapter;
         private System.Windows.Forms.DataGridView invoicesDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.BindingSource invoiceLineItemsBindingSource;
+        private PayablesDataSetTableAdapters.InvoiceLineItemsTableAdapter invoiceLineItemsTableAdapter;
+        private System.Windows.Forms.DataGridView invoiceLineItemsDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
     }
 }

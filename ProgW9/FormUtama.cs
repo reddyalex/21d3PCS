@@ -34,5 +34,11 @@ namespace ProgW9
             FormInvoice f = new FormInvoice();
             f.Show();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            InvoiceMaintenance f = new InvoiceMaintenance();
+            f.Show();
+        }
     }
 }
