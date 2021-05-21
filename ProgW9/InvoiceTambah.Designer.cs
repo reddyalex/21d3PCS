@@ -41,11 +41,13 @@ namespace ProgW9
             System.Windows.Forms.Label accountNoLabel;
             System.Windows.Forms.Label descriptionLabel;
             System.Windows.Forms.Label amountLabel;
+            System.Windows.Forms.Label invoiceTotalLabel;
             this.payablesDataSet = new ProgW9.PayablesDataSet();
             this.vendorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vendorsTableAdapter = new ProgW9.PayablesDataSetTableAdapters.VendorsTableAdapter();
             this.tableAdapterManager = new ProgW9.PayablesDataSetTableAdapters.TableAdapterManager();
             this.vendorIDTextBox = new System.Windows.Forms.TextBox();
+            this.invoicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.address1TextBox = new System.Windows.Forms.TextBox();
             this.address2TextBox = new System.Windows.Forms.TextBox();
@@ -56,13 +58,11 @@ namespace ProgW9
             this.vendorIDToolStripLabel = new System.Windows.Forms.ToolStripLabel();
             this.vendorIDToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.fillByVendorIDToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.invoicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.invoicesTableAdapter = new ProgW9.PayablesDataSetTableAdapters.InvoicesTableAdapter();
             this.invoiceNumberTextBox = new System.Windows.Forms.TextBox();
             this.invoiceDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.termsIDComboBox = new System.Windows.Forms.ComboBox();
             this.termsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.payablesDataSet1 = new ProgW9.PayablesDataSet();
             this.dueDateTextBox = new System.Windows.Forms.TextBox();
             this.invoiceLineItemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.invoiceLineItemsTableAdapter = new ProgW9.PayablesDataSetTableAdapters.InvoiceLineItemsTableAdapter();
@@ -72,13 +72,15 @@ namespace ProgW9
             this.amountTextBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.invoiceLineItemsDataGridView = new System.Windows.Forms.DataGridView();
+            this.termsTableAdapter = new ProgW9.PayablesDataSetTableAdapters.TermsTableAdapter();
+            this.gLAccountsTableAdapter = new ProgW9.PayablesDataSetTableAdapters.GLAccountsTableAdapter();
+            this.button2 = new System.Windows.Forms.Button();
+            this.invoiceTotalTextBox = new System.Windows.Forms.TextBox();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.termsTableAdapter = new ProgW9.PayablesDataSetTableAdapters.TermsTableAdapter();
-            this.gLAccountsTableAdapter = new ProgW9.PayablesDataSetTableAdapters.GLAccountsTableAdapter();
             vendorIDLabel = new System.Windows.Forms.Label();
             nameLabel = new System.Windows.Forms.Label();
             address1Label = new System.Windows.Forms.Label();
@@ -90,12 +92,12 @@ namespace ProgW9
             accountNoLabel = new System.Windows.Forms.Label();
             descriptionLabel = new System.Windows.Forms.Label();
             amountLabel = new System.Windows.Forms.Label();
+            invoiceTotalLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.payablesDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vendorsBindingSource)).BeginInit();
-            this.fillByVendorIDToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.invoicesBindingSource)).BeginInit();
+            this.fillByVendorIDToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.termsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.payablesDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.invoiceLineItemsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gLAccountsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.invoiceLineItemsDataGridView)).BeginInit();
@@ -200,6 +202,15 @@ namespace ProgW9
             amountLabel.TabIndex = 24;
             amountLabel.Text = "Amount:";
             // 
+            // invoiceTotalLabel
+            // 
+            invoiceTotalLabel.AutoSize = true;
+            invoiceTotalLabel.Location = new System.Drawing.Point(494, 536);
+            invoiceTotalLabel.Name = "invoiceTotalLabel";
+            invoiceTotalLabel.Size = new System.Drawing.Size(72, 13);
+            invoiceTotalLabel.TabIndex = 29;
+            invoiceTotalLabel.Text = "Invoice Total:";
+            // 
             // payablesDataSet
             // 
             this.payablesDataSet.DataSetName = "PayablesDataSet";
@@ -227,12 +238,17 @@ namespace ProgW9
             // 
             // vendorIDTextBox
             // 
-            this.vendorIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vendorsBindingSource, "VendorID", true));
+            this.vendorIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoicesBindingSource, "VendorID", true));
             this.vendorIDTextBox.Enabled = false;
             this.vendorIDTextBox.Location = new System.Drawing.Point(124, 46);
             this.vendorIDTextBox.Name = "vendorIDTextBox";
-            this.vendorIDTextBox.Size = new System.Drawing.Size(279, 20);
+            this.vendorIDTextBox.Size = new System.Drawing.Size(100, 20);
             this.vendorIDTextBox.TabIndex = 2;
+            // 
+            // invoicesBindingSource
+            // 
+            this.invoicesBindingSource.DataMember = "Invoices";
+            this.invoicesBindingSource.DataSource = this.payablesDataSet;
             // 
             // nameTextBox
             // 
@@ -319,11 +335,6 @@ namespace ProgW9
             this.fillByVendorIDToolStripButton.Text = "Find";
             this.fillByVendorIDToolStripButton.Click += new System.EventHandler(this.fillByVendorIDToolStripButton_Click);
             // 
-            // invoicesBindingSource
-            // 
-            this.invoicesBindingSource.DataMember = "Invoices";
-            this.invoicesBindingSource.DataSource = this.payablesDataSet;
-            // 
             // invoicesTableAdapter
             // 
             this.invoicesTableAdapter.ClearBeforeFill = true;
@@ -347,10 +358,10 @@ namespace ProgW9
             // 
             // termsIDComboBox
             // 
-            this.termsIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoicesBindingSource, "TermsID", true));
             this.termsIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.invoicesBindingSource, "TermsID", true));
             this.termsIDComboBox.DataSource = this.termsBindingSource;
             this.termsIDComboBox.DisplayMember = "Description";
+            this.termsIDComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.termsIDComboBox.FormattingEnabled = true;
             this.termsIDComboBox.Location = new System.Drawing.Point(602, 101);
             this.termsIDComboBox.Name = "termsIDComboBox";
@@ -362,12 +373,7 @@ namespace ProgW9
             // termsBindingSource
             // 
             this.termsBindingSource.DataMember = "Terms";
-            this.termsBindingSource.DataSource = this.payablesDataSet1;
-            // 
-            // payablesDataSet1
-            // 
-            this.payablesDataSet1.DataSetName = "PayablesDataSet";
-            this.payablesDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.termsBindingSource.DataSource = this.payablesDataSet;
             // 
             // dueDateTextBox
             // 
@@ -389,9 +395,9 @@ namespace ProgW9
             // 
             // accountNoComboBox
             // 
-            this.accountNoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoiceLineItemsBindingSource, "AccountNo", true));
             this.accountNoComboBox.DataSource = this.gLAccountsBindingSource;
             this.accountNoComboBox.DisplayMember = "Description";
+            this.accountNoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.accountNoComboBox.FormattingEnabled = true;
             this.accountNoComboBox.Location = new System.Drawing.Point(124, 218);
             this.accountNoComboBox.Name = "accountNoComboBox";
@@ -402,7 +408,7 @@ namespace ProgW9
             // gLAccountsBindingSource
             // 
             this.gLAccountsBindingSource.DataMember = "GLAccounts";
-            this.gLAccountsBindingSource.DataSource = this.payablesDataSet1;
+            this.gLAccountsBindingSource.DataSource = this.payablesDataSet;
             // 
             // descriptionTextBox
             // 
@@ -426,6 +432,7 @@ namespace ProgW9
             this.button1.TabIndex = 26;
             this.button1.Text = "Add";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // invoiceLineItemsDataGridView
             // 
@@ -446,13 +453,38 @@ namespace ProgW9
             this.invoiceLineItemsDataGridView.Size = new System.Drawing.Size(749, 259);
             this.invoiceLineItemsDataGridView.TabIndex = 27;
             // 
+            // termsTableAdapter
+            // 
+            this.termsTableAdapter.ClearBeforeFill = true;
+            // 
+            // gLAccountsTableAdapter
+            // 
+            this.gLAccountsTableAdapter.ClearBeforeFill = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(688, 531);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 28;
+            this.button2.Text = "Save";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // invoiceTotalTextBox
+            // 
+            this.invoiceTotalTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoicesBindingSource, "InvoiceTotal", true));
+            this.invoiceTotalTextBox.Location = new System.Drawing.Point(572, 533);
+            this.invoiceTotalTextBox.Name = "invoiceTotalTextBox";
+            this.invoiceTotalTextBox.Size = new System.Drawing.Size(100, 20);
+            this.invoiceTotalTextBox.TabIndex = 30;
+            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "InvoiceID";
             this.dataGridViewTextBoxColumn1.HeaderText = "InvoiceID";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Visible = false;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -460,7 +492,6 @@ namespace ProgW9
             this.dataGridViewTextBoxColumn2.HeaderText = "InvoiceSequence";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Visible = false;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -483,19 +514,14 @@ namespace ProgW9
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
-            // termsTableAdapter
-            // 
-            this.termsTableAdapter.ClearBeforeFill = true;
-            // 
-            // gLAccountsTableAdapter
-            // 
-            this.gLAccountsTableAdapter.ClearBeforeFill = true;
-            // 
             // InvoiceTambah
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(883, 582);
+            this.Controls.Add(invoiceTotalLabel);
+            this.Controls.Add(this.invoiceTotalTextBox);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.invoiceLineItemsDataGridView);
             this.Controls.Add(this.button1);
             this.Controls.Add(amountLabel);
@@ -529,11 +555,10 @@ namespace ProgW9
             this.Load += new System.EventHandler(this.InvoiceTambah_Load);
             ((System.ComponentModel.ISupportInitialize)(this.payablesDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vendorsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invoicesBindingSource)).EndInit();
             this.fillByVendorIDToolStrip.ResumeLayout(false);
             this.fillByVendorIDToolStrip.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.invoicesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.termsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.payablesDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.invoiceLineItemsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gLAccountsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.invoiceLineItemsDataGridView)).EndInit();
@@ -572,15 +597,16 @@ namespace ProgW9
         private System.Windows.Forms.TextBox amountTextBox;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView invoiceLineItemsDataGridView;
+        private System.Windows.Forms.BindingSource termsBindingSource;
+        private PayablesDataSetTableAdapters.TermsTableAdapter termsTableAdapter;
+        private System.Windows.Forms.BindingSource gLAccountsBindingSource;
+        private PayablesDataSetTableAdapters.GLAccountsTableAdapter gLAccountsTableAdapter;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox invoiceTotalTextBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private PayablesDataSet payablesDataSet1;
-        private System.Windows.Forms.BindingSource termsBindingSource;
-        private PayablesDataSetTableAdapters.TermsTableAdapter termsTableAdapter;
-        private System.Windows.Forms.BindingSource gLAccountsBindingSource;
-        private PayablesDataSetTableAdapters.GLAccountsTableAdapter gLAccountsTableAdapter;
     }
 }

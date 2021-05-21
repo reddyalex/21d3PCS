@@ -1296,8 +1296,6 @@ namespace ProgW9 {
             
             private global::System.Data.DataColumn columnDueDate;
             
-            private global::System.Data.DataColumn columnPaymentDate;
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public InvoicesDataTable() {
@@ -1405,14 +1403,6 @@ namespace ProgW9 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn PaymentDateColumn {
-                get {
-                    return this.columnPaymentDate;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1448,7 +1438,7 @@ namespace ProgW9 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public InvoicesRow AddInvoicesRow(VendorsRow parentVendorsRowByFK_Invoices_Vendors, string InvoiceNumber, System.DateTime InvoiceDate, decimal InvoiceTotal, decimal PaymentTotal, decimal CreditTotal, TermsRow parentTermsRowByFK_Invoices_Terms, System.DateTime DueDate, System.DateTime PaymentDate) {
+            public InvoicesRow AddInvoicesRow(VendorsRow parentVendorsRowByFK_Invoices_Vendors, string InvoiceNumber, System.DateTime InvoiceDate, decimal InvoiceTotal, decimal PaymentTotal, decimal CreditTotal, TermsRow parentTermsRowByFK_Invoices_Terms, System.DateTime DueDate) {
                 InvoicesRow rowInvoicesRow = ((InvoicesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1459,8 +1449,7 @@ namespace ProgW9 {
                         PaymentTotal,
                         CreditTotal,
                         null,
-                        DueDate,
-                        PaymentDate};
+                        DueDate};
                 if ((parentVendorsRowByFK_Invoices_Vendors != null)) {
                     columnValuesArray[1] = parentVendorsRowByFK_Invoices_Vendors[0];
                 }
@@ -1505,7 +1494,6 @@ namespace ProgW9 {
                 this.columnCreditTotal = base.Columns["CreditTotal"];
                 this.columnTermsID = base.Columns["TermsID"];
                 this.columnDueDate = base.Columns["DueDate"];
-                this.columnPaymentDate = base.Columns["PaymentDate"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1529,8 +1517,6 @@ namespace ProgW9 {
                 base.Columns.Add(this.columnTermsID);
                 this.columnDueDate = new global::System.Data.DataColumn("DueDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDueDate);
-                this.columnPaymentDate = new global::System.Data.DataColumn("PaymentDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPaymentDate);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnInvoiceID}, true));
                 this.columnInvoiceID.AutoIncrement = true;
@@ -1545,7 +1531,9 @@ namespace ProgW9 {
                 this.columnInvoiceDate.AllowDBNull = false;
                 this.columnInvoiceTotal.AllowDBNull = false;
                 this.columnPaymentTotal.AllowDBNull = false;
+                this.columnPaymentTotal.DefaultValue = ((decimal)(0m));
                 this.columnCreditTotal.AllowDBNull = false;
+                this.columnCreditTotal.DefaultValue = ((decimal)(0m));
                 this.columnTermsID.AllowDBNull = false;
                 this.columnDueDate.AllowDBNull = false;
             }
@@ -4802,22 +4790,6 @@ namespace ProgW9 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime PaymentDate {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableInvoices.PaymentDateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PaymentDate\' in table \'Invoices\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableInvoices.PaymentDateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public TermsRow TermsRow {
                 get {
                     return ((TermsRow)(this.GetParentRow(this.Table.ParentRelations["FK_Invoices_Terms"])));
@@ -4836,18 +4808,6 @@ namespace ProgW9 {
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_Invoices_Vendors"]);
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsPaymentDateNull() {
-                return this.IsNull(this.tableInvoices.PaymentDateColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetPaymentDateNull() {
-                this[this.tableInvoices.PaymentDateColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7111,11 +7071,10 @@ SELECT InvoiceID, InvoiceSequence, AccountNo, Amount, Description FROM InvoiceLi
             tableMapping.ColumnMappings.Add("CreditTotal", "CreditTotal");
             tableMapping.ColumnMappings.Add("TermsID", "TermsID");
             tableMapping.ColumnMappings.Add("DueDate", "DueDate");
-            tableMapping.ColumnMappings.Add("PaymentDate", "PaymentDate");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Invoices] WHERE (([InvoiceID] = @Original_InvoiceID) AND ([VendorID] = @Original_VendorID) AND ([InvoiceNumber] = @Original_InvoiceNumber) AND ([InvoiceDate] = @Original_InvoiceDate) AND ([InvoiceTotal] = @Original_InvoiceTotal) AND ([PaymentTotal] = @Original_PaymentTotal) AND ([CreditTotal] = @Original_CreditTotal) AND ([TermsID] = @Original_TermsID) AND ([DueDate] = @Original_DueDate) AND ((@IsNull_PaymentDate = 1 AND [PaymentDate] IS NULL) OR ([PaymentDate] = @Original_PaymentDate)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Invoices] WHERE (([InvoiceID] = @Original_InvoiceID) AND ([VendorID] = @Original_VendorID) AND ([InvoiceNumber] = @Original_InvoiceNumber) AND ([InvoiceDate] = @Original_InvoiceDate) AND ([InvoiceTotal] = @Original_InvoiceTotal) AND ([PaymentTotal] = @Original_PaymentTotal) AND ([CreditTotal] = @Original_CreditTotal) AND ([TermsID] = @Original_TermsID) AND ([DueDate] = @Original_DueDate))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_InvoiceID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "InvoiceID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_VendorID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "VendorID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -7126,12 +7085,10 @@ SELECT InvoiceID, InvoiceSequence, AccountNo, Amount, Description FROM InvoiceLi
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CreditTotal", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CreditTotal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TermsID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TermsID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DueDate", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DueDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PaymentDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PaymentDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PaymentDate", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PaymentDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Invoices] ([VendorID], [InvoiceNumber], [InvoiceDate], [InvoiceTotal], [PaymentTotal], [CreditTotal], [TermsID], [DueDate], [PaymentDate]) VALUES (@VendorID, @InvoiceNumber, @InvoiceDate, @InvoiceTotal, @PaymentTotal, @CreditTotal, @TermsID, @DueDate, @PaymentDate);
-SELECT InvoiceID, VendorID, InvoiceNumber, InvoiceDate, InvoiceTotal, PaymentTotal, CreditTotal, TermsID, DueDate, PaymentDate FROM Invoices WHERE (InvoiceID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Invoices] ([VendorID], [InvoiceNumber], [InvoiceDate], [InvoiceTotal], [PaymentTotal], [CreditTotal], [TermsID], [DueDate]) VALUES (@VendorID, @InvoiceNumber, @InvoiceDate, @InvoiceTotal, @PaymentTotal, @CreditTotal, @TermsID, @DueDate);
+SELECT InvoiceID, VendorID, InvoiceNumber, InvoiceDate, InvoiceTotal, PaymentTotal, CreditTotal, TermsID, DueDate FROM Invoices WHERE (InvoiceID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@VendorID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "VendorID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@InvoiceNumber", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "InvoiceNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -7141,11 +7098,10 @@ SELECT InvoiceID, VendorID, InvoiceNumber, InvoiceDate, InvoiceTotal, PaymentTot
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CreditTotal", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CreditTotal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TermsID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TermsID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DueDate", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DueDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PaymentDate", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PaymentDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Invoices] SET [VendorID] = @VendorID, [InvoiceNumber] = @InvoiceNumber, [InvoiceDate] = @InvoiceDate, [InvoiceTotal] = @InvoiceTotal, [PaymentTotal] = @PaymentTotal, [CreditTotal] = @CreditTotal, [TermsID] = @TermsID, [DueDate] = @DueDate, [PaymentDate] = @PaymentDate WHERE (([InvoiceID] = @Original_InvoiceID) AND ([VendorID] = @Original_VendorID) AND ([InvoiceNumber] = @Original_InvoiceNumber) AND ([InvoiceDate] = @Original_InvoiceDate) AND ([InvoiceTotal] = @Original_InvoiceTotal) AND ([PaymentTotal] = @Original_PaymentTotal) AND ([CreditTotal] = @Original_CreditTotal) AND ([TermsID] = @Original_TermsID) AND ([DueDate] = @Original_DueDate) AND ((@IsNull_PaymentDate = 1 AND [PaymentDate] IS NULL) OR ([PaymentDate] = @Original_PaymentDate)));
-SELECT InvoiceID, VendorID, InvoiceNumber, InvoiceDate, InvoiceTotal, PaymentTotal, CreditTotal, TermsID, DueDate, PaymentDate FROM Invoices WHERE (InvoiceID = @InvoiceID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Invoices] SET [VendorID] = @VendorID, [InvoiceNumber] = @InvoiceNumber, [InvoiceDate] = @InvoiceDate, [InvoiceTotal] = @InvoiceTotal, [PaymentTotal] = @PaymentTotal, [CreditTotal] = @CreditTotal, [TermsID] = @TermsID, [DueDate] = @DueDate WHERE (([InvoiceID] = @Original_InvoiceID) AND ([VendorID] = @Original_VendorID) AND ([InvoiceNumber] = @Original_InvoiceNumber) AND ([InvoiceDate] = @Original_InvoiceDate) AND ([InvoiceTotal] = @Original_InvoiceTotal) AND ([PaymentTotal] = @Original_PaymentTotal) AND ([CreditTotal] = @Original_CreditTotal) AND ([TermsID] = @Original_TermsID) AND ([DueDate] = @Original_DueDate));
+SELECT InvoiceID, VendorID, InvoiceNumber, InvoiceDate, InvoiceTotal, PaymentTotal, CreditTotal, TermsID, DueDate FROM Invoices WHERE (InvoiceID = @InvoiceID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@VendorID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "VendorID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@InvoiceNumber", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "InvoiceNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -7155,7 +7111,6 @@ SELECT InvoiceID, VendorID, InvoiceNumber, InvoiceDate, InvoiceTotal, PaymentTot
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CreditTotal", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CreditTotal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TermsID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TermsID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DueDate", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DueDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PaymentDate", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PaymentDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_InvoiceID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "InvoiceID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_VendorID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "VendorID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_InvoiceNumber", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "InvoiceNumber", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -7165,8 +7120,6 @@ SELECT InvoiceID, VendorID, InvoiceNumber, InvoiceDate, InvoiceTotal, PaymentTot
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CreditTotal", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CreditTotal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TermsID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TermsID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DueDate", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DueDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PaymentDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PaymentDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PaymentDate", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PaymentDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@InvoiceID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "InvoiceID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -7180,19 +7133,22 @@ SELECT InvoiceID, VendorID, InvoiceNumber, InvoiceDate, InvoiceTotal, PaymentTot
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT InvoiceID, VendorID, InvoiceNumber, InvoiceDate, InvoiceTotal, PaymentTota" +
-                "l, CreditTotal, TermsID, DueDate, PaymentDate FROM dbo.Invoices";
+                "l, CreditTotal, TermsID, DueDate FROM Invoices";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "SELECT InvoiceID, VendorID, InvoiceNumber, InvoiceDate, InvoiceTotal, PaymentTota" +
-                "l, CreditTotal, TermsID, DueDate, PaymentDate FROM dbo.Invoices\r\nwhere VendorID=" +
-                " @vendorID";
+                "l, CreditTotal, TermsID, DueDate FROM Invoices WHERE (VendorID = @vendorID)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@vendorID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "VendorID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT IDENT_CURRENT(\'Invoices\') FROM Invoices";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7266,7 +7222,7 @@ SELECT InvoiceID, VendorID, InvoiceNumber, InvoiceDate, InvoiceTotal, PaymentTot
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_InvoiceID, int Original_VendorID, string Original_InvoiceNumber, System.DateTime Original_InvoiceDate, decimal Original_InvoiceTotal, decimal Original_PaymentTotal, decimal Original_CreditTotal, int Original_TermsID, System.DateTime Original_DueDate, global::System.Nullable<global::System.DateTime> Original_PaymentDate) {
+        public virtual int Delete(int Original_InvoiceID, int Original_VendorID, string Original_InvoiceNumber, System.DateTime Original_InvoiceDate, decimal Original_InvoiceTotal, decimal Original_PaymentTotal, decimal Original_CreditTotal, int Original_TermsID, System.DateTime Original_DueDate) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_InvoiceID));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_VendorID));
             if ((Original_InvoiceNumber == null)) {
@@ -7281,14 +7237,6 @@ SELECT InvoiceID, VendorID, InvoiceNumber, InvoiceDate, InvoiceTotal, PaymentTot
             this.Adapter.DeleteCommand.Parameters[6].Value = ((decimal)(Original_CreditTotal));
             this.Adapter.DeleteCommand.Parameters[7].Value = ((int)(Original_TermsID));
             this.Adapter.DeleteCommand.Parameters[8].Value = ((System.DateTime)(Original_DueDate));
-            if ((Original_PaymentDate.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((System.DateTime)(Original_PaymentDate.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -7309,7 +7257,7 @@ SELECT InvoiceID, VendorID, InvoiceNumber, InvoiceDate, InvoiceTotal, PaymentTot
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int VendorID, string InvoiceNumber, System.DateTime InvoiceDate, decimal InvoiceTotal, decimal PaymentTotal, decimal CreditTotal, int TermsID, System.DateTime DueDate, global::System.Nullable<global::System.DateTime> PaymentDate) {
+        public virtual int Insert(int VendorID, string InvoiceNumber, System.DateTime InvoiceDate, decimal InvoiceTotal, decimal PaymentTotal, decimal CreditTotal, int TermsID, System.DateTime DueDate) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(VendorID));
             if ((InvoiceNumber == null)) {
                 throw new global::System.ArgumentNullException("InvoiceNumber");
@@ -7323,12 +7271,6 @@ SELECT InvoiceID, VendorID, InvoiceNumber, InvoiceDate, InvoiceTotal, PaymentTot
             this.Adapter.InsertCommand.Parameters[5].Value = ((decimal)(CreditTotal));
             this.Adapter.InsertCommand.Parameters[6].Value = ((int)(TermsID));
             this.Adapter.InsertCommand.Parameters[7].Value = ((System.DateTime)(DueDate));
-            if ((PaymentDate.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((System.DateTime)(PaymentDate.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -7358,7 +7300,6 @@ SELECT InvoiceID, VendorID, InvoiceNumber, InvoiceDate, InvoiceTotal, PaymentTot
                     decimal CreditTotal, 
                     int TermsID, 
                     System.DateTime DueDate, 
-                    global::System.Nullable<global::System.DateTime> PaymentDate, 
                     int Original_InvoiceID, 
                     int Original_VendorID, 
                     string Original_InvoiceNumber, 
@@ -7368,7 +7309,6 @@ SELECT InvoiceID, VendorID, InvoiceNumber, InvoiceDate, InvoiceTotal, PaymentTot
                     decimal Original_CreditTotal, 
                     int Original_TermsID, 
                     System.DateTime Original_DueDate, 
-                    global::System.Nullable<global::System.DateTime> Original_PaymentDate, 
                     int InvoiceID) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(VendorID));
             if ((InvoiceNumber == null)) {
@@ -7383,35 +7323,21 @@ SELECT InvoiceID, VendorID, InvoiceNumber, InvoiceDate, InvoiceTotal, PaymentTot
             this.Adapter.UpdateCommand.Parameters[5].Value = ((decimal)(CreditTotal));
             this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(TermsID));
             this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(DueDate));
-            if ((PaymentDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(PaymentDate.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_InvoiceID));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_VendorID));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_InvoiceID));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_VendorID));
             if ((Original_InvoiceNumber == null)) {
                 throw new global::System.ArgumentNullException("Original_InvoiceNumber");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_InvoiceNumber));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_InvoiceNumber));
             }
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((System.DateTime)(Original_InvoiceDate));
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((decimal)(Original_InvoiceTotal));
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((decimal)(Original_PaymentTotal));
-            this.Adapter.UpdateCommand.Parameters[15].Value = ((decimal)(Original_CreditTotal));
-            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_TermsID));
-            this.Adapter.UpdateCommand.Parameters[17].Value = ((System.DateTime)(Original_DueDate));
-            if ((Original_PaymentDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((System.DateTime)(Original_PaymentDate.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[20].Value = ((int)(InvoiceID));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((System.DateTime)(Original_InvoiceDate));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((decimal)(Original_InvoiceTotal));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((decimal)(Original_PaymentTotal));
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((decimal)(Original_CreditTotal));
+            this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Original_TermsID));
+            this.Adapter.UpdateCommand.Parameters[16].Value = ((System.DateTime)(Original_DueDate));
+            this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(InvoiceID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -7441,7 +7367,6 @@ SELECT InvoiceID, VendorID, InvoiceNumber, InvoiceDate, InvoiceTotal, PaymentTot
                     decimal CreditTotal, 
                     int TermsID, 
                     System.DateTime DueDate, 
-                    global::System.Nullable<global::System.DateTime> PaymentDate, 
                     int Original_InvoiceID, 
                     int Original_VendorID, 
                     string Original_InvoiceNumber, 
@@ -7450,9 +7375,36 @@ SELECT InvoiceID, VendorID, InvoiceNumber, InvoiceDate, InvoiceTotal, PaymentTot
                     decimal Original_PaymentTotal, 
                     decimal Original_CreditTotal, 
                     int Original_TermsID, 
-                    System.DateTime Original_DueDate, 
-                    global::System.Nullable<global::System.DateTime> Original_PaymentDate) {
-            return this.Update(VendorID, InvoiceNumber, InvoiceDate, InvoiceTotal, PaymentTotal, CreditTotal, TermsID, DueDate, PaymentDate, Original_InvoiceID, Original_VendorID, Original_InvoiceNumber, Original_InvoiceDate, Original_InvoiceTotal, Original_PaymentTotal, Original_CreditTotal, Original_TermsID, Original_DueDate, Original_PaymentDate, Original_InvoiceID);
+                    System.DateTime Original_DueDate) {
+            return this.Update(VendorID, InvoiceNumber, InvoiceDate, InvoiceTotal, PaymentTotal, CreditTotal, TermsID, DueDate, Original_InvoiceID, Original_VendorID, Original_InvoiceNumber, Original_InvoiceDate, Original_InvoiceTotal, Original_PaymentTotal, Original_CreditTotal, Original_TermsID, Original_DueDate, Original_InvoiceID);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual global::System.Nullable<decimal> getLastID() {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return new global::System.Nullable<decimal>();
+            }
+            else {
+                return new global::System.Nullable<decimal>(((decimal)(returnValue)));
+            }
         }
     }
     
