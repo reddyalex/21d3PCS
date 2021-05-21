@@ -60,16 +60,16 @@ namespace ProgW9
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.vendorsBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.vendorIDSpinEdit = new DevExpress.XtraEditors.SpinEdit();
-            this.nameTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.address1TextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.address2TextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.cityTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.vendorIDSpinEdit = new System.Windows.Forms.TextBox();
+            this.nameTextEdit = new System.Windows.Forms.TextBox();
+            this.address1TextEdit = new System.Windows.Forms.TextBox();
+            this.address2TextEdit = new System.Windows.Forms.TextBox();
+            this.cityTextEdit = new System.Windows.Forms.TextBox();
             this.stateComboBox = new System.Windows.Forms.ComboBox();
-            this.zipCodeTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.zipCodeTextEdit = new System.Windows.Forms.TextBox();
             this.phoneTextBox = new System.Windows.Forms.TextBox();
-            this.contactLNameTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.contactFNameTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.contactLNameTextEdit = new System.Windows.Forms.TextBox();
+            this.contactFNameTextEdit = new System.Windows.Forms.TextBox();
             this.defaultTermsIDComboBox = new System.Windows.Forms.ComboBox();
             this.defaultAccountNoComboBox = new System.Windows.Forms.ComboBox();
             this.invoicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -109,14 +109,14 @@ namespace ProgW9
             ((System.ComponentModel.ISupportInitialize)(this.vendorsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vendorsBindingNavigator)).BeginInit();
             this.vendorsBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.vendorIDSpinEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nameTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.address1TextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.address2TextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cityTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zipCodeTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.contactLNameTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.contactFNameTextEdit.Properties)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.vendorIDSpinEdit.Properties)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.nameTextEdit.Properties)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.address1TextEdit.Properties)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.address2TextEdit.Properties)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.cityTextEdit.Properties)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.zipCodeTextEdit.Properties)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.contactLNameTextEdit.Properties)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.contactFNameTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.invoicesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.invoicesDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.invoiceLineItemsBindingSource)).BeginInit();
@@ -382,22 +382,22 @@ namespace ProgW9
             // 
             // vendorIDSpinEdit
             // 
-            this.vendorIDSpinEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.vendorsBindingSource, "VendorID", true));
-            this.vendorIDSpinEdit.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
+            this.vendorIDSpinEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vendorsBindingSource, "VendorID", true));
+            //this.vendorIDSpinEdit.EditValue = new decimal(new int[] {
+            //0,
+            //0,
+            //0,
+            //0});
             this.vendorIDSpinEdit.Location = new System.Drawing.Point(284, 55);
             this.vendorIDSpinEdit.Name = "vendorIDSpinEdit";
-            this.vendorIDSpinEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            //this.vendorIDSpinEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            //new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.vendorIDSpinEdit.Size = new System.Drawing.Size(121, 20);
             this.vendorIDSpinEdit.TabIndex = 2;
             // 
             // nameTextEdit
             // 
-            this.nameTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.vendorsBindingSource, "Name", true));
+            this.nameTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vendorsBindingSource, "Name", true));
             this.nameTextEdit.Location = new System.Drawing.Point(284, 81);
             this.nameTextEdit.Name = "nameTextEdit";
             this.nameTextEdit.Size = new System.Drawing.Size(121, 20);
@@ -405,7 +405,7 @@ namespace ProgW9
             // 
             // address1TextEdit
             // 
-            this.address1TextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.vendorsBindingSource, "Address1", true));
+            this.address1TextEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vendorsBindingSource, "Address1", true));
             this.address1TextEdit.Location = new System.Drawing.Point(284, 107);
             this.address1TextEdit.Name = "address1TextEdit";
             this.address1TextEdit.Size = new System.Drawing.Size(121, 20);
@@ -413,7 +413,7 @@ namespace ProgW9
             // 
             // address2TextEdit
             // 
-            this.address2TextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.vendorsBindingSource, "Address2", true));
+            this.address2TextEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vendorsBindingSource, "Address2", true));
             this.address2TextEdit.Location = new System.Drawing.Point(284, 133);
             this.address2TextEdit.Name = "address2TextEdit";
             this.address2TextEdit.Size = new System.Drawing.Size(121, 20);
@@ -421,7 +421,7 @@ namespace ProgW9
             // 
             // cityTextEdit
             // 
-            this.cityTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.vendorsBindingSource, "City", true));
+            this.cityTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vendorsBindingSource, "City", true));
             this.cityTextEdit.Location = new System.Drawing.Point(284, 159);
             this.cityTextEdit.Name = "cityTextEdit";
             this.cityTextEdit.Size = new System.Drawing.Size(121, 20);
@@ -438,7 +438,7 @@ namespace ProgW9
             // 
             // zipCodeTextEdit
             // 
-            this.zipCodeTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.vendorsBindingSource, "ZipCode", true));
+            this.zipCodeTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vendorsBindingSource, "ZipCode", true));
             this.zipCodeTextEdit.Location = new System.Drawing.Point(575, 52);
             this.zipCodeTextEdit.Name = "zipCodeTextEdit";
             this.zipCodeTextEdit.Size = new System.Drawing.Size(121, 20);
@@ -454,7 +454,7 @@ namespace ProgW9
             // 
             // contactLNameTextEdit
             // 
-            this.contactLNameTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.vendorsBindingSource, "ContactLName", true));
+            this.contactLNameTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vendorsBindingSource, "ContactLName", true));
             this.contactLNameTextEdit.Location = new System.Drawing.Point(575, 104);
             this.contactLNameTextEdit.Name = "contactLNameTextEdit";
             this.contactLNameTextEdit.Size = new System.Drawing.Size(121, 20);
@@ -462,7 +462,7 @@ namespace ProgW9
             // 
             // contactFNameTextEdit
             // 
-            this.contactFNameTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.vendorsBindingSource, "ContactFName", true));
+            this.contactFNameTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vendorsBindingSource, "ContactFName", true));
             this.contactFNameTextEdit.Location = new System.Drawing.Point(575, 130);
             this.contactFNameTextEdit.Name = "contactFNameTextEdit";
             this.contactFNameTextEdit.Size = new System.Drawing.Size(121, 20);
@@ -672,14 +672,14 @@ namespace ProgW9
             ((System.ComponentModel.ISupportInitialize)(this.vendorsBindingNavigator)).EndInit();
             this.vendorsBindingNavigator.ResumeLayout(false);
             this.vendorsBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.vendorIDSpinEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nameTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.address1TextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.address2TextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cityTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zipCodeTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.contactLNameTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.contactFNameTextEdit.Properties)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.vendorIDSpinEdit.Properties)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.nameTextEdit.Properties)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.address1TextEdit.Properties)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.address2TextEdit.Properties)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.cityTextEdit.Properties)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.zipCodeTextEdit.Properties)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.contactLNameTextEdit.Properties)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.contactFNameTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.invoicesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.invoicesDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.invoiceLineItemsBindingSource)).EndInit();
@@ -708,16 +708,16 @@ namespace ProgW9
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton vendorsBindingNavigatorSaveItem;
-        private DevExpress.XtraEditors.SpinEdit vendorIDSpinEdit;
-        private DevExpress.XtraEditors.TextEdit nameTextEdit;
-        private DevExpress.XtraEditors.TextEdit address1TextEdit;
-        private DevExpress.XtraEditors.TextEdit address2TextEdit;
-        private DevExpress.XtraEditors.TextEdit cityTextEdit;
+        private System.Windows.Forms.TextBox vendorIDSpinEdit;
+        private System.Windows.Forms.TextBox nameTextEdit;
+        private System.Windows.Forms.TextBox address1TextEdit;
+        private System.Windows.Forms.TextBox address2TextEdit;
+        private System.Windows.Forms.TextBox cityTextEdit;
         private System.Windows.Forms.ComboBox stateComboBox;
-        private DevExpress.XtraEditors.TextEdit zipCodeTextEdit;
+        private System.Windows.Forms.TextBox zipCodeTextEdit;
         private System.Windows.Forms.TextBox phoneTextBox;
-        private DevExpress.XtraEditors.TextEdit contactLNameTextEdit;
-        private DevExpress.XtraEditors.TextEdit contactFNameTextEdit;
+        private System.Windows.Forms.TextBox contactLNameTextEdit;
+        private System.Windows.Forms.TextBox contactFNameTextEdit;
         private System.Windows.Forms.ComboBox defaultTermsIDComboBox;
         private System.Windows.Forms.ComboBox defaultAccountNoComboBox;
         private System.Windows.Forms.BindingSource invoicesBindingSource;
