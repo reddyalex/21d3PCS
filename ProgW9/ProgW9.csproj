@@ -60,6 +60,12 @@
     <Compile Include="FormInvoiceDetail.Designer.cs">
       <DependentUpon>FormInvoiceDetail.cs</DependentUpon>
     </Compile>
+    <Compile Include="InvoiceTambah.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InvoiceTambah.Designer.cs">
+      <DependentUpon>InvoiceTambah.cs</DependentUpon>
+    </Compile>
     <Compile Include="LibraryInvoice.cs" />
     <Compile Include="DataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -95,6 +101,9 @@
     <Compile Include="FormUtama.Designer.cs">
       <DependentUpon>FormUtama.cs</DependentUpon>
     </Compile>
+    <Compile Include="PayablesDataSet.cs">
+      <DependentUpon>PayablesDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="PayablesDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -107,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormInvoiceDetail.resx">
       <DependentUpon>FormInvoiceDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InvoiceTambah.resx">
+      <DependentUpon>InvoiceTambah.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Masterterms.resx">
       <DependentUpon>Masterterms.cs</DependentUpon>
